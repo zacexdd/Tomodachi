@@ -221,6 +221,7 @@
             white-space: nowrap;
             animation: pulse 2s infinite;
             -webkit-tap-highlight-color: transparent;
+            animation: btnPulse 2s ease-in-out infinite;
         }
 
         .download-btn:active {
@@ -366,10 +367,25 @@
             margin: 0 auto;
             animation: pulse 2s infinite;
             -webkit-tap-highlight-color: transparent;
+            animation: btnPulse 2s ease-in-out infinite;
         }
 
         #verify-btn:hover {
             opacity: 0.9;
+        }
+
+        @keyframes btnPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(242, 118, 33, 0.45);
+            }
+
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 6px 32px rgba(242, 118, 33, 0.75);
+            }
         }
     </style>
 </head>
@@ -550,11 +566,11 @@
                 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
                 if (!isMobile) {
                     document.body.innerHTML = `
-                <div style="background:#0f0f0f;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:2rem;">
-                    <div style="font-size:48px;margin-bottom:1rem;">📱</div>
-                    <h1 style="color:#fff;font-size:22px;margin-bottom:.5rem;">Mobile Only</h1>
-                    <p style="color:#888;font-size:14px;max-width:280px;line-height:1.6;">This site is for mobile devices only. Open <span style="color:#ff5500">scriptxe.xyz</span> on your phone.</p>
-                </div>`;
+                    <div style="position:fixed;inset:0;background:#0f0f0f;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:2rem;">
+                        <div style="font-size:48px;margin-bottom:1rem;">📱</div>
+                        <h1 style="color:#fff;font-size:22px;margin-bottom:.5rem;">Mobile Only</h1>
+                        <p style="color:#888;font-size:14px;max-width:280px;line-height:1.6;">This site is for mobile devices only. Open <span style="color:#ff5500">scriptxe.xyz</span> on your phone.</p>
+                    </div>`;
                     document.body.style.margin = "0";
                 }
             </script>

